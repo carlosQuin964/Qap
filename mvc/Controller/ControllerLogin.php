@@ -57,7 +57,7 @@ if (isset($_POST['nick'])) {
            $ticket = $decodedJSON->{'Ticket'};
         }
         curl_close($request); 
-        header("location:https://192.168.1.4/qap/extensions/Externo/Externo.html?qlikTicket=".$ticket); 
+        header("location:https://192.168.1.4/qap/extensions/Externo/Externo.php?qlikTicket=".$ticket); 
 
       die();
      }else {

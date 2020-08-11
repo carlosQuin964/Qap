@@ -58,16 +58,16 @@ $request = curl_init();
 
         if($ldap_user=='marcos.herrera' || $ldap_user=='julian.gonzalez' ){
                if($app_seleccionada == "Nomina"){
-                 header("location:https://192.168.1.4/qap/extensions/Interno/Interno.html?qlikTicket=".$ticket); 
+                 header("location:https://192.168.1.4/qap/extensions/Interno/Interno.php?qlikTicket=".$ticket); 
                }
                elseif($app_seleccionada == "Monitoreo"){
-                 header("location:https://192.168.1.4/qap/extensions/Monitoreo/Monitoreo.html?qlikTicket=".$ticket); 
+                 header("location:https://192.168.1.4/qap/extensions/Monitoreo/Monitoreo.php?qlikTicket=".$ticket); 
                }
             }   
         else {
          
                if($app_seleccionada == "Nomina"){
-                 header("location:https://192.168.1.4/qap/extensions/Interno/Interno.html?qlikTicket=".$ticket); 
+                 header("location:https://192.168.1.4/qap/extensions/Interno/Interno.php?qlikTicket=".$ticket); 
                }
                elseif($app_seleccionada == "Monitoreo"){
                  echo '<script> alert("Usted no tiene permiso para acceder a esta App");</script>'; 
