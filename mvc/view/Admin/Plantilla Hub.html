@@ -9,36 +9,55 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
     <style type="text/css">
-        .my-card
+        
+        :root {
+    --primary: #007934;
+    --light: #ffffff;
+    --grey: #efefef;
+    --side_bar_hover_green: #36a21d;
+    --boton_primario: #7ad400;
+    --boton_primario_hover:#36a21d;
+    --subtitle_grey:#707070;
+}
+
+.fuente_color_primario{
+  color: var(--primary);
+}
+
+.my-card
 {
     position:absolute;
     left:40%;
     top:-20px;
     border-radius:50%;
+    color: var(--primary);
 }
 
-        .nav-side-menu {
+
+
+.nav-side-menu {
   overflow: auto;
-  font-family: verdana;
-  font-size: 12px;
-  font-weight: 200;
-  background-color: #2e353d;
+  font-size: 14px;
+  font-weight: 300;
+  background-color: var(--primary);
+  border-radius: 0px 30px 0px 0px;
   position: fixed;
   top: 0px;
-  width: 300px;
+  width: 15%;
   height: 100%;
-  color: #e1ffff;
+  color: var(--light);
 }
 .nav-side-menu .brand {
-  background-color: #23282e;
   line-height: 50px;
   display: block;
   text-align: center;
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: 600;
 }
 .nav-side-menu .toggle-btn {
   display: none;
 }
+
 .nav-side-menu ul,
 .nav-side-menu li {
   list-style: none;
@@ -46,6 +65,7 @@
   margin: 0px;
   line-height: 35px;
   cursor: pointer;
+  color:  var(--light);
   /*    
     .collapsed{
        .arrow:before{
@@ -60,9 +80,15 @@
      }
 */
 }
+
+.fa {
+  color: var(--primary);
+}
+
+
+
 .nav-side-menu ul :not(collapsed) .arrow:before,
 .nav-side-menu li :not(collapsed) .arrow:before {
-  font-family: FontAwesome;
   content: "\f078";
   display: inline-block;
   padding-left: 10px;
@@ -70,11 +96,27 @@
   vertical-align: middle;
   float: right;
 }
+
+.nav-side-menu li a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .nav-side-menu ul .active,
 .nav-side-menu li .active {
-  border-left: 3px solid #d19b3d;
-  background-color: #4f5b69;
+  background-color: var(--light);
+  color: var(--primary);
+  border-radius: 0px 14px 14px 0px;
 }
+
+.nav-side-menu ul .active:hover,
+.nav-side-menu li .active:hover {
+  background-color: var(--side_bar_hover_green);
+  color: var(--light);
+  border-radius: 0px 14px 14px 0px;
+}
+
+/*
 .nav-side-menu ul .sub-menu li.active,
 .nav-side-menu li .sub-menu li.active {
   color: #d19b3d;
@@ -88,7 +130,6 @@
   background-color: #181c20;
   border: none;
   line-height: 28px;
-  border-bottom: 1px solid #23282e;
   margin-left: 0px;
 }
 .nav-side-menu ul .sub-menu li:hover,
@@ -97,41 +138,47 @@
 }
 .nav-side-menu ul .sub-menu li:before,
 .nav-side-menu li .sub-menu li:before {
-  font-family: FontAwesome;
   content: "\f105";
   display: inline-block;
   padding-left: 10px;
   padding-right: 10px;
   vertical-align: middle;
 }
+*/
 .nav-side-menu li {
   padding-left: 0px;
-  border-left: 3px solid #2e353d;
-  border-bottom: 1px solid #23282e;
 }
-.nav-side-menu li a {
-  text-decoration: none;
-  color: #e1ffff;
-}
+
 .nav-side-menu li a i {
   padding-left: 10px;
   width: 20px;
   padding-right: 20px;
+  color: inherit;
 }
+
 .nav-side-menu li:hover {
-  border-left: 3px solid #d19b3d;
-  background-color: #4f5b69;
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  -ms-transition: all 1s ease;
-  transition: all 1s ease;
+  border-radius: 0px 14px 14px 0px;
+  background-color: var(--side_bar_hover_green);
+  color: var(--light);
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
+
+.nav-side-menu li:hover a i {
+  color: inherit;
+}
+
 @media (max-width: 767px) {
   .nav-side-menu {
     position: relative;
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 50px;
+    padding-bottom: 10px;
+    border-radius: 0 0 14px 0px;
+    
   }
   .nav-side-menu .toggle-btn {
     display: block;
@@ -141,8 +188,7 @@
     top: 10px;
     z-index: 10 !important;
     padding: 3px;
-    background-color: #ffffff;
-    color: #000;
+    color: var(--light);
     width: 40px;
     text-align: center;
   }
@@ -158,14 +204,18 @@
     display: block;
   }
 }
+
 body {
   margin: 0px;
   padding: 0px;
+  font-family: "VAG Rounded", Helvetica, sans-serif;
+  /*overflow-y: hidden;*/
 }
 
 
 .accesoR{
-  margin-left: 100px
+  /*margin-left: 100px*/
+  margin-top: 20px;
 }
 .top{
     margin-top: 50px;
@@ -178,17 +228,24 @@ body {
   padding-top: 7%;
 }
 .col-md-4{
-    padding-bottom:20px;
+  padding-bottom:20px;
 }
 
 .white {
   color: #fff !important;
 }
-.mt{float: left;margin-top: -20px;padding-top: 20px;}
+.mt{
+  float: left;
+  margin-top: -20px;
+  padding-top: 20px;}
+
 .bg-blue-ui {
-  background-color: #708198 !important;
+  /*background-color: #708198 !important;*/
 }
-figure img{width:300px;}
+
+figure img{
+  width:300px;
+}
 
 #blogCarousel {
   padding-bottom: 100px;
@@ -227,6 +284,7 @@ figure img{width:300px;}
   text-align: center;
   z-index: 4;
   padding: 20px;
+  border-radius: 14px;
 }
 
 .item-box-blog-image {
@@ -244,7 +302,8 @@ figure img{width:300px;}
   padding: 4px 20px;
   top: -20px;
   right: 8px;
-  background-color: #41cb52;
+  background-color: #707070;
+  border-radius: 0 0 14px 14px;
 }
 
 .item-box-blog-date span {
@@ -275,6 +334,7 @@ figure img{width:300px;}
 
 .item-box-blog-heading a {
     text-decoration: none;
+    color: var(--primary);
 }
 
 .item-box-blog-data p {
@@ -308,18 +368,17 @@ figure img{width:300px;}
 }
 
 .aba{
-
-    margin-top: -60px
+    margin-top: -20px;
 }
 
 .btnNo {
-        background: none;
-        color: inherit;
-        border: none;
-        padding: 0;
-        font: inherit;
-        cursor: pointer;
-        outline: inherit;
+  background: none;
+  color: inherit !important;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
 }
 
 
@@ -344,6 +403,76 @@ figure img{width:300px;}
     text-transform: uppercase;
     border: 2px solid #28d094;
 }
+
+.border-info{
+  border-color:var(--primary) !important;
+  border-radius: 14px;
+}
+
+.container{
+  width: 100%;
+}
+
+
+.btn-primary {
+  border-radius: 14px;
+  background-color: var(--boton_primario);
+  color: var(--light);
+  border: 0;
+  min-width: 120px;
+}
+
+.btn-primary:hover{
+  background-color: var(--boton_primario_hover);
+  color: var(--light);
+}
+
+.card_streams {
+  color: var(--primary);
+  font-size: 16px;
+}
+
+.text-info h5 {
+  color: var(--boton_primario);
+  font-weight: bolder;
+}
+.text-info h6 {
+  color: #8B8D8E;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--subtitle_grey);
+}
+
+.contenedor_main {
+  margin: 50px 0 0 20px;
+  width: 85% !important;
+  position: absolute;
+  left: 15%;
+}
+
+@media (max-width: 767px) {
+.contenedor_main {
+  margin: 20px 20px 20px 20px;
+  width: 92% !important;
+  position: absolute;
+  left: 0;
+}
+}
+.container100 {
+  width: 100%;
+  margin: 0 auto 0 auto;
+}
+
     </style>
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -367,13 +496,17 @@ figure img{width:300px;}
 
 
    <form id="Apps">
-  
-             <li>
-                  <a href="#">
+    <li>
+      <a href="#">
+      <i class="fa fa-dashboard fa-lg"></i>  <input type="submit" class="btnNo" name="str" text="hola" value="'.$NombreStream.'">
+              </a>
+    </li>
 
-                  <i class="fa fa-dashboard fa-lg"></i>  <input type="submit" class="btnNo" name="str" text="hola" value="'.$NombreStream.'">
-                  </a>
-                </li>
+    <li class="active">
+      <a href="#">
+      <i class="fa fa-dashboard fa-lg fuente_color_primario"></i>  <input type="submit" class="btnNo fuente_color_primario" name="str" text="hola" value="'.$NombreStream.'">
+              </a>
+    </li>
      
       </form>
 
@@ -382,37 +515,36 @@ figure img{width:300px;}
             </ul>
      </div>
 </div>
-  <div class="container top">
-  <div class="accesoR">
-<div class="row w-100">
 
-
-
-    
-   <div class="col-md-3">
-   <form id="Apps">
-            <div class="card border-info mx-sm-1 p-3">
-                <div class="card border-info shadow text-info p-3 my-card" ><span class="fa fa-bar-chart" aria-hidden="true"></span></div>
-                <div class="text-info text-center mt-3"><h4># Apps </h4></div>
-                <div class="text-info text-center mt-2"><h1>2</h1></div>
-               <input type="submit" name="str" text="hola" value="'.$NombreStream.'" class="btn btn-outlined btn-block btn-primary">
+<div class="contenedor_main">
+  <div class="container100"> <!--container top-->
+    <h1>QAP EPM</h1>
+    <p>Bienvenido a la plataforma de información de EPM, a continuación se muestran las apps disponibles de acuerdo a su perfil en los diferentes Streams de Qlik Sense</p>
+    <div class="accesoR">
+      <div class="row w-100">
+        <div class="col-md-3">
+          <form id="Apps">
+            <div class="card border-info mx-sm-1 p-3 ">
+              <div class="card border-info shadow text-info p-3 my-card" ><span class="fa fa-bar-chart" aria-hidden="true"></span></div>
+              <div class="text-info text-center mt-3"><h6># Apps</h6></div>
+              <div class="text-info text-center mt-2"><h5>2</h5></div>
+                <input type="submit" name="str" text="hola" value="'.$NombreStream.'" class="btn btn-outlined btn-block btn-primary btn-sm">
             </div>
-              </form>
+          </form>
         </div>  
-
-
-
-</div>
-</div>
-</div>
+      </div>
+    </div>
+  </div>
 
 
 
 
 
-   <div class="container cta-100 aba ">
+   <div class="container100"><!-- class="container cta-100 aba "-->
   
-        <div class="container">
+        <!--div class="container100"-->
+          <br>
+          <h2>Stream NAAAAAAAAME</h2>
           <div class="row blog">
             <div class="col-md-12">
               <div id="blogCarousel" class="carousel slide container-blog" data-ride="carousel">
@@ -447,7 +579,7 @@ figure img{width:300px;}
                               <div class="item-box-blog-text">
                                 <p><!--Aqui donde se agrege el comentario de la app queda cool --></p>
                               </div>
-                              <div class="mt"> <a href="www" tabindex="0" class="btn bg-blue-ui white read">Abrir App</a> </div>
+                              <div class="mt"> <a href="www" tabindex="0" class="btn bg-blue-ui white read btn-primary">Abrir App</a> </div>
                               <!--Read More Button-->
                             </div>
                           </div>
@@ -470,9 +602,10 @@ figure img{width:300px;}
 
  
 
-        </div>
+        <!--/div-->
+
       </div>
-   
+   </div>
 
 
 <script type="text/javascript">
